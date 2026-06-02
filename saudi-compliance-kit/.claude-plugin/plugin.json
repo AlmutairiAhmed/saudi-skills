@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "saudi-compliance-kit",
+  "version": "1.0.0",
+  "description": "Engineering-level compliance & localization review for Saudi-market apps: PDPL (SDAIA) data protection, ZATCA (Fatoorah) e-invoicing, and Arabic RTL/i18n correctness. Not legal advice — surfaces risk for a licensed professional to confirm.",
+  "author": {
+    "name": "Ahmed Almutairi",
+    "url": "https://github.com/AlmutairiAhmed"
+  },
+  "homepage": "https://github.com/AlmutairiAhmed/saudi-skills",
+  "repository": "https://github.com/AlmutairiAhmed/saudi-skills",
+  "license": "MIT",
+  "keywords": ["saudi", "ksa", "pdpl", "sdaia", "zatca", "fatoorah", "vat", "arabic", "rtl", "i18n", "compliance", "consumer-protection"]
+}
