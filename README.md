@@ -97,6 +97,48 @@ Claude searches your codebase and returns a grouped report — every item marked
 
 ---
 
+## Applicable industries
+
+`pdpl-check` covers **horizontal** (cross-sector) Saudi rules — PDPL, consumer
+protection, and ZATCA. The trigger is simple: **if your product handles the
+personal data of people in KSA, and/or sells to consumers and issues invoices,
+the skill applies.** That covers essentially every consumer-facing digital
+product, including:
+
+| Sector | Examples |
+|---|---|
+| 🛒 E-commerce & retail | online stores, marketplaces, D2C brands, dropshipping |
+| 💻 SaaS & B2B software | dashboards, CRMs, dev tools, productivity apps |
+| 🍔 Food & delivery | restaurant ordering, grocery, q-commerce |
+| 🚗 Mobility & logistics | ride-hailing, fleet, last-mile delivery, shipping |
+| ✈️ Travel & hospitality | booking, hotels, tourism, events, ticketing |
+| 🏠 Real estate / proptech | listings, rentals, property management |
+| 🎓 EdTech | courses, LMS, tutoring, e-learning |
+| 🎬 Media & entertainment | streaming, content, gaming, publishing |
+| 👔 HR & recruitment | job boards, ATS, payroll, freelancing platforms |
+| 🛠️ On-demand & home services | maintenance, beauty, cleaning, bookings |
+| 🤝 Nonprofit & membership | charities, associations, subscription clubs |
+| 🚜 AgriTech / EnergyTech / IoT | any platform with user accounts + billing |
+
+### Regulated verticals — applicable **plus** sector rules
+
+These still need PDPL + ZATCA, **and** carry extra Saudi regulators this skill
+does **not** yet cover (use a specialist + a dedicated skill):
+
+| Sector | Extra regulator / framework |
+|---|---|
+| 💳 Fintech / payments / wallets | **SAMA** (+ Mada, open banking) |
+| 🏥 HealthTech | **MOH / NHIC / SDAIA health-data** rules |
+| 🛡️ Insurance (InsurTech) | **SAMA** / Insurance Authority |
+| 📡 Telecom | **CITC** |
+| 🏛️ GovTech & identity | **Nafath/Absher, Najiz, NCA ECC** cybersecurity controls |
+
+> The skill reviews what's visible **in code & UI**. It can't verify VAT
+> registration, contracts, or operational processes (breach response, data
+> retention enforcement) — those need a human.
+
+---
+
 ## Repository layout
 
 ```text
