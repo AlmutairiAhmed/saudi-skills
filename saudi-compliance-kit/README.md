@@ -1,14 +1,12 @@
 # saudi-compliance-kit
 
-Claude Code plugin: engineering-level compliance & localization review for **Saudi-market** apps.
+Claude Code plugin: engineering-level **Saudi compliance** review for web/mobile apps.
 
 > ⚠️ Not legal or tax advice. Surfaces risk for a licensed Saudi attorney / ZATCA-experienced accountant to confirm.
 
-## Skills
+## Skill
 
-- **`pdpl-privacy-check`** — Saudi PDPL (SDAIA) data protection + consumer protection.
-- **`zatca-einvoice-check`** — ZATCA (Fatoorah) e-invoicing + VAT.
-- **`arabic-rtl-i18n`** — Arabic localization & RTL correctness.
+- **`pdpl-check`** — Saudi PDPL (SDAIA) data protection + consumer-protection disclosures + VAT/ZATCA (Fatoorah) e-invoicing. Reports `Present`/`Missing`/`Unknown` with file evidence and concrete fixes.
 
 ## Install
 
@@ -19,6 +17,6 @@ Claude Code plugin: engineering-level compliance & localization review for **Sau
 
 ## Usage
 
-Invoke directly (`/pdpl-privacy-check`, `/zatca-einvoice-check`, `/arabic-rtl-i18n`) or just describe the task — each skill auto-triggers on relevant work (auth, billing, invoices, locale files).
+Invoke directly (`/pdpl-check`) or just describe the task — it auto-triggers on relevant work (auth, billing, invoices, uploads, pricing).
 
-See the [marketplace README](../README.md) for full details. MIT © Ahmed Almutairi.
+See the [marketplace README](../README.md) for details. MIT © Ahmed Almutairi.

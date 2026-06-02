@@ -6,17 +6,17 @@
     "url": "https://github.com/AlmutairiAhmed"
   },
   "metadata": {
-    "description": "Claude Code skills for building software for the Saudi market — PDPL & ZATCA compliance, Arabic RTL/i18n quality.",
+    "description": "Claude Code skill for building software for the Saudi market — PDPL, consumer-protection, and ZATCA compliance review.",
     "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "saudi-compliance-kit",
       "source": "./saudi-compliance-kit",
-      "description": "Engineering-level compliance & localization review for Saudi-market apps: PDPL (SDAIA) data protection, ZATCA (Fatoorah) e-invoicing, and Arabic RTL/i18n correctness.",
+      "description": "Engineering-level Saudi compliance review: PDPL (SDAIA) data protection, consumer-protection disclosures, and ZATCA (Fatoorah) e-invoicing.",
       "version": "1.0.0",
       "author": { "name": "Ahmed Almutairi" },
-      "keywords": ["saudi", "ksa", "pdpl", "sdaia", "zatca", "fatoorah", "vat", "arabic", "rtl", "i18n", "compliance"],
+      "keywords": ["saudi", "ksa", "pdpl", "sdaia", "zatca", "fatoorah", "vat", "compliance", "consumer-protection"],
       "category": "compliance"
     }
   ]

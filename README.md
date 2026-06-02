@@ -2,25 +2,22 @@
 
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin-D97757)](https://claude.com/claude-code)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![Skills](https://img.shields.io/badge/skills-3-success)](#whats-inside)
 
-A [Claude Code](https://claude.com/claude-code) plugin marketplace for teams building software for the **Saudi market**. It teaches Claude your local regulations and localization standards, so a first-pass compliance and Arabic/RTL review takes seconds instead of a meeting.
+A [Claude Code](https://claude.com/claude-code) plugin for teams building software for the **Saudi market**. It teaches Claude your local regulations, so a first-pass compliance review takes seconds instead of a meeting.
 
-> ⚠️ **Not legal or tax advice.** These skills surface *engineering-level* risk so a **licensed Saudi attorney** or **ZATCA-experienced accountant** can confirm. They do not replace professional review.
+> ⚠️ **Not legal or tax advice.** This skill surfaces *engineering-level* risk so a **licensed Saudi attorney** or **ZATCA-experienced accountant** can confirm. It does not replace professional review.
 
 ---
 
 ## What's inside
 
-The marketplace ships one plugin — **`saudi-compliance-kit`** — with three skills:
+The marketplace ships one plugin — **`saudi-compliance-kit`** — with one skill:
 
 | Skill | What it checks |
 |---|---|
-| 🛡️ **`pdpl-privacy-check`** | PDPL (SDAIA) data protection + consumer protection — privacy notice, consent, data-subject rights, cookie/analytics consent, cross-border transfer, pre-charge price disclosure. |
-| 🧾 **`zatca-einvoice-check`** | ZATCA (Fatoorah) e-invoicing + VAT — Phase-2 XML, cryptographic stamp, QR code, mandatory invoice fields, 15% VAT, SAR formatting. |
-| 🌐 **`arabic-rtl-i18n`** | Arabic localization & RTL — translation key parity, English-leaking strings, `dir`/`lang`, mirrored layouts & column order, bidi numerics, per-locale contrast. |
+| 🛡️ **`pdpl-check`** | **PDPL (SDAIA)** data protection — privacy notice, consent, data-subject rights, cookie/analytics consent, cross-border transfer · **Consumer protection** — pre-charge price disclosure, refund/cancellation/auto-renewal terms · **VAT / ZATCA (Fatoorah)** — Phase-2 XML, cryptographic stamp, QR code, mandatory invoice fields, 15% VAT. |
 
-Each skill is **stack-agnostic** — it searches your codebase, reports `Present` / `Missing` / `Unknown` with file-and-line evidence, and proposes concrete fixes.
+The skill is **stack-agnostic** — it searches your codebase, reports `Present` / `Missing` / `Unknown` with file-and-line evidence, and proposes concrete fixes.
 
 ---
 
@@ -33,12 +30,10 @@ In any Claude Code session:
 /plugin install saudi-compliance-kit
 ```
 
-Then invoke a skill explicitly, or just describe the task and Claude will trigger the right one:
+Then invoke it explicitly, or just describe the task and Claude will trigger it:
 
 ```text
-/pdpl-privacy-check
-/zatca-einvoice-check
-/arabic-rtl-i18n
+/pdpl-check
 ```
 
 To update later:
@@ -53,11 +48,11 @@ To update later:
 
 > **You:** review my billing code for Saudi compliance
 >
-> **Claude** *(runs `zatca-einvoice-check`)*:
-> ❌ **[critical] QR code** — Missing · `services/email_service.py:228` · Invoice PDF has no TLV QR code; required for ZATCA.
-> ❌ **[high] VAT breakdown** — Missing · same file · Shows total only, no separate 15% VAT line.
-> ✅ **SAR formatting** — Present · halala→SAR conversion correct.
-> *Top blocker: this is a cosmetic PDF, not a ZATCA invoice. Confirm VAT registration + Phase-2 onboarding with an accountant.*
+> **Claude** *(runs `pdpl-check`)*:
+> ❌ **[critical] ZATCA QR code** — Missing · `services/email_service.py:228` · Invoice PDF has no TLV QR code; required for ZATCA.
+> ❌ **[high] Cookie consent** — Missing · `index.html` · Analytics load before any consent banner.
+> ✅ **Privacy notice** — Present · linked at signup (bilingual AR/EN).
+> *Top blocker: invoice is a cosmetic PDF, not a ZATCA invoice. Get licensed legal + accounting sign-off before launch.*
 
 ---
 
@@ -71,16 +66,14 @@ saudi-skills/
     ├── .claude-plugin/
     │   └── plugin.json           # plugin manifest
     └── skills/
-        ├── pdpl-privacy-check/SKILL.md
-        ├── zatca-einvoice-check/SKILL.md
-        └── arabic-rtl-i18n/SKILL.md
+        └── pdpl-check/SKILL.md
 ```
 
 ---
 
 ## Contributing
 
-Issues and PRs welcome — especially regulation updates, new locales, or additional Saudi-market skills (Najiz, Nafath/SSO, Mada payments, Saudi address format, Hijri dates). Keep skills stack-agnostic and evidence-based.
+Issues and PRs welcome — regulation updates or additional Saudi-market skills (Arabic RTL/i18n, Nafath/SSO, Mada payments, Hijri dates). Keep skills stack-agnostic and evidence-based.
 
 ## License
 
@@ -88,4 +81,4 @@ Issues and PRs welcome — especially regulation updates, new locales, or additi
 
 ---
 
-<sub>Built with [Claude Code](https://claude.com/claude-code). Regulatory references: [SDAIA / PDPL](https://sdaia.gov.sa) · [ZATCA / Fatoorah](https://zatca.gov.sa) · [Ministry of Commerce](https://mc.gov.sa).</sub>
+<sub>Built with [Claude Code](https://claude.com/claude-code). References: [SDAIA / PDPL](https://sdaia.gov.sa) · [ZATCA / Fatoorah](https://zatca.gov.sa) · [Ministry of Commerce](https://mc.gov.sa).</sub>
